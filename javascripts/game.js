@@ -28,7 +28,8 @@ var modes = {
 	ngud: 0,
 	nguep: 0,
 	ngmu: 0,
-	ngumu: 0
+	ngumu: 0,
+	ngem: 0
 }
 function updateNewPlayer(reseted) {
     if (reseted) {
@@ -42,7 +43,8 @@ function updateNewPlayer(reseted) {
             ngud: player.aarexModifications.nguspV !== undefined ? 3 : player.aarexModifications.ngudpV !== undefined ? 2 : player.exdilation !== undefined ? 1 : 0,
             nguep: player.aarexModifications.nguepV !== undefined,
             ngmu: player.aarexModifications.newGameMult === 1,
-            ngumu: player.aarexModifications.ngumuV !== undefined
+            ngumu: player.aarexModifications.ngumuV !== undefined,
+	    ngem: player.aarexModifications.ngexpert !== undefined
         }
     } else var modesChosen = modes
     player = {
@@ -3516,7 +3518,8 @@ var modCaps = {
   ngud: 4,
   nguep: 2,
   ngmu: 3,
-  ngumu: 3
+  ngumu: 3,
+  ngem: 1,
 }
 var modFullNames = {
   rs: "Respecced",
@@ -3528,7 +3531,8 @@ var modFullNames = {
   ngud: "NGUd",
   nguep: "NGUd↑'",
   ngmu: "NG*",
-  ngumu: "NGUd*'"
+  ngumu: "NGUd*'",
+  ngem: "Expert Mode"
 }
 var modSubNames = {
   ngp: ["OFF", "ON", "NG++++"],
@@ -3539,7 +3543,8 @@ var modSubNames = {
   ngud: ["OFF", "ON", "Prime (')", "Semiprime (S')", "Semiprime.1 (S'.1)"],
   nguep: ["Linear' (↑⁰')", "Exponential' (↑')", "Tetrational' (↑↑')"],
   ngmu: ["OFF", "ON", "NG**", "NG*3"],
-  ngumu: ["OFF", "ON", "**'", "*3'"]
+  ngumu: ["OFF", "ON", "**'", "*3'"],
+  ngem: ["OFF", "ON", "Death Mode"]
 }
 function toggle_mode(id) {
 	hasSubMod = Object.keys(modCaps).includes(id)
